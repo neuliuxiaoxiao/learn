@@ -17,6 +17,9 @@ public class AVLTree<T extends Comparable<T>> {
 			this.height=0;
 		}
 	}
+	public AVLTree(){
+		mRoot=null;
+	}
 	/*
 	 * 获取树的高度
 	 * */
@@ -27,6 +30,12 @@ public class AVLTree<T extends Comparable<T>> {
 	}
 	public int height(){
 		return height(mRoot);
+	}
+	/**
+	 * 比较两个值得大小
+	 */
+	private int max(int a,int b){
+		return a>b?a:b;
 	}
 	
 	//前序遍历
@@ -130,12 +139,7 @@ public class AVLTree<T extends Comparable<T>> {
 			}
 			return null;
 		}
-	/**
-	 * 比较两个值得大小
-	 */
-	private int max(int a,int b){
-		return a>b?a:b;
-	}
+	
 	/**
 	 * LL 左左对应的情况（左单旋转）
 	 * 返回值：旋转后的根节点
@@ -216,7 +220,7 @@ public class AVLTree<T extends Comparable<T>> {
 					if(key.compareTo(tree.right.key)>0)
 						tree = rightRightRotation(tree);
 					else
-						tree = leftRightRotation(tree);
+						tree = rightLeftRotation(tree);
 				}
 			}else{ //cmp==0
 				System.out.println("添加失败,不允许添加相同的节点！");

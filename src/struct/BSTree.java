@@ -287,14 +287,4 @@ public class BSTree<T extends Comparable<T>> {
 		destory(mRoot);
 		mRoot=null;
 	}
-	public static void main(String[] args) {
-		int arr[] = {1,5,4,3,2,6};
-		int i, ilen;
-		 ilen = arr.length;
-		BSTree tree = new BSTree<>();
-		 for(i=0; i<ilen; i++) {
-			 tree.insert(arr[i]);
-		 }
-		tree.print();
-	}
 }
