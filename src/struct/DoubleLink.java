@@ -1,5 +1,6 @@
 package struct;
 
+//双向链表
 public class DoubleLink<T> {
 
 	// 表头

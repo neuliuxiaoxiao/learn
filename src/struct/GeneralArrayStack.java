@@ -2,6 +2,7 @@ package struct;
 
 import java.lang.reflect.Array;
 
+//用数组实现的栈   数组实现的栈，能存储任意类型的数据。
 public class GeneralArrayStack<T> {
 
 	private static final int DEFAULT_SIZE=12;
