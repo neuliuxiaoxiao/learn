@@ -1,4 +1,6 @@
-package struct;
+package struct.test;
+
+import struct.AVLTree;
 
 /**
  * Java 语言: AVL树
