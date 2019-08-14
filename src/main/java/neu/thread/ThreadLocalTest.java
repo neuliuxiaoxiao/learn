@@ -6,7 +6,7 @@ public class ThreadLocalTest {
 		System.out.println(str+":"+localVariable.get());
 		//localVariable.remove();
 	}
-	static ThreadLocal<String> localVariable=new ThreadLocal<>();
+	static ThreadLocal<String> localVariable=new ThreadLocal<String>();
 	public static void main(String[] args) {
 		Thread threadOne = new Thread(new Runnable() {
 			public void run() {

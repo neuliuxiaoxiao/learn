@@ -39,7 +39,6 @@ public class AspectTwo implements Ordered {
      * 定义优先级,值越低,优先级越高
      * @return
      */
-    @Override
     public int getOrder() {
         return 2;
     }

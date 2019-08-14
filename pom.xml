@@ -87,5 +87,11 @@
 			<version>1.2.16</version>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+    <groupId>org.apache.kafka</groupId>
+    <artifactId>kafka_2.12</artifactId>
+    <version>2.2.0</version>
+</dependency>
+		
 	</dependencies>
 </project>

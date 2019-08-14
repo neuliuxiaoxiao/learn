@@ -6,7 +6,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class Copylist {
 
 	private static volatile CopyOnWriteArrayList<String> arrayList =
-			new CopyOnWriteArrayList<>();
+			new CopyOnWriteArrayList<String>();
 	public static void main(String[] args) throws InterruptedException {
 		arrayList.add("hello");
 		arrayList.add("alibaba");

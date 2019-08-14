@@ -35,7 +35,6 @@ public class AspectOne implements Ordered {
         System.out.println("后置通知....执行顺序4");
     }
 
-	@Override
 	public int getOrder() {
 		return 0;
 	}
