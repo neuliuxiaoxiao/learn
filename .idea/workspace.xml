@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="c8bea04c-7f6e-4fc2-aa81-75ef30934c07" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/neu/jvm/Demo1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/neu/jvm/ReferenceDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/jvm/ReferenceDemo.java" afterDir="false" />
+=======
+    <list default="true" id="fd163ea8-0b07-470b-beef-460971650d11" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/neu/jvm/SafepointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/aop/AspectOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/aop/AspectOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/aop/AspectTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/aop/AspectTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/aop/UserDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/aop/UserDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/aop/jdk/JDKProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/aop/jdk/JDKProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/juc/Copylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/juc/Copylist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/juc/NonReenTrantLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/juc/NonReenTrantLock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/learn/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/learn/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/leetcode/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/leetcode/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/struct/HuffmanNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/struct/HuffmanNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/thread/ThreadLocalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/thread/ThreadLocalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/neu/thread/ThreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/neu/thread/ThreadTest.java" afterDir="false" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,23 +31,50 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
+<<<<<<< HEAD
     <session id="-1979475595">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
+=======
+    <session id="-114927643">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.5" value="1" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
           <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+<<<<<<< HEAD
           <entry key="java" value="2" />
+=======
+          <entry key="java" value="5" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+<<<<<<< HEAD
           <entry key="JAVA" value="2" />
+=======
+          <entry key="JAVA" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="8" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
         </counts>
       </usages-collector>
     </session>
@@ -38,32 +82,61 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/neu/jvm/Demo1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
               <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/neu/kafka/ConsumerClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-294">
+              <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/neu/learn/Tree.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="846">
               <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/neu/kafka/ProducerClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/neu/jvm/Demo1.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/neu/jvm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/neu/jvm/SafepointTest.java" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
       </list>
     </option>
   </component>
@@ -73,11 +146,26 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="806" />
     <option name="y" value="122" />
     <option name="width" value="1450" />
     <option name="height" value="770" />
+=======
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="283" />
+    <option name="y" value="22" />
+    <option name="width" value="1243" />
+    <option name="height" value="1047" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -85,9 +173,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -98,6 +192,7 @@
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
               <item name="learn" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="production" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -117,14 +212,20 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
             </path>
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
               <item name="learn" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="neu" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
             </path>
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
@@ -132,8 +233,11 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="neu" type="462c0819:PsiDirectoryNode" />
               <item name="jvm" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
             </path>
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
@@ -142,7 +246,10 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="neu" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="learn" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
             </path>
             <path>
               <item name="learn" type="b2602c69:ProjectViewProjectNode" />
@@ -151,8 +258,12 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="neu" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="learn" type="462c0819:PsiDirectoryNode" />
               <item name="Tree.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+=======
+              <item name="kafka" type="462c0819:PsiDirectoryNode" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
             </path>
           </expand>
           <select />
@@ -163,11 +274,23 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565706341337" />
     <property name="last_opened_file_path" value="E:/学习/亿级流量电商详情页系统实战（第二版）：缓存架构+高可用服务架构+微服务架构/65_讲给Java工程师的史上最通俗易懂Storm教程：纯手敲WordCount程序/65_讲给Java工程师的史上最通俗易懂Storm教程：纯手敲WordCount程序/代码/storm-helloworld" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565742437938" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/neu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -182,8 +305,13 @@
     </option>
   </component>
   <component name="RunManager">
+<<<<<<< HEAD
     <configuration name="Demo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="neu.jvm.Demo1" />
+=======
+    <configuration name="SafepointTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="neu.jvm.SafepointTest" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
       <module name="learn" />
       <extension name="coverage">
         <pattern>
@@ -197,7 +325,11 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Application.Demo1" />
+=======
+        <item itemvalue="Application.SafepointTest" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
       </list>
     </recent_temporary>
   </component>
@@ -206,6 +338,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="c8bea04c-7f6e-4fc2-aa81-75ef30934c07" name="Default Changelist" comment="" />
       <created>1565705689479</created>
       <option name="number" value="Default" />
@@ -213,10 +346,20 @@
       <updated>1565705689479</updated>
       <workItem from="1565705691862" duration="1041000" />
       <workItem from="1565880074262" duration="34000" />
+=======
+      <changelist id="fd163ea8-0b07-470b-beef-460971650d11" name="Default Changelist" comment="" />
+      <created>1563151231416</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563151231416</updated>
+      <workItem from="1563151235867" duration="1218000" />
+      <workItem from="1565742095113" duration="315000" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="1075000" />
   </component>
   <component name="ToolWindowManager">
@@ -232,25 +375,59 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
+=======
+    <option name="totallyTimeSpent" value="1533000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2521322" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32962137" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" visible="true" weight="0.3286119" />
+=======
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32962137" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32962137" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+<<<<<<< HEAD
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+=======
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="aiXcoder" order="6" side_tool="true" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +437,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/neu/jvm/Demo1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -271,13 +449,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="846">
           <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+=======
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/neu/kafka/ProducerClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/neu/jvm/SafepointTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/neu/kafka/ConsumerClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-294">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+<<<<<<< HEAD
       <state key="ProjectJDKs.UI">
+=======
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
         <settings>
           <last-edited>1.8</last-edited>
           <splitter-proportions>
@@ -289,6 +533,45 @@
           </splitter-proportions>
         </settings>
       </state>
+<<<<<<< HEAD
+=======
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>learn</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+>>>>>>> f0390c3c02c981286a5f0ca4bbc0cb4b078e3b32
     </states>
   </component>
 </project>

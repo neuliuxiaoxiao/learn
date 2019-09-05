@@ -5,19 +5,19 @@ import java.util.concurrent.FutureTask;
 
 public class ThreadTest {
 
-	//方式1 Thread
+	//鏂瑰紡1 Thread
 	public static class MyThread extends Thread{
 		public void run() {
 			System.out.println("I'm a child thread"+this.getName());
 		}
 	}
-	//方式2 Runnable
+	//鏂瑰紡2 Runnable
 	public static class RunnableTask implements Runnable{
 		public void run() {
 			System.out.println("I'm a child thread"+Thread.currentThread().getName());
 		}
 	}
-	//方式3 FutureTask
+	//鏂瑰紡3 FutureTask
 	public static class CallerTask implements Callable<String>{
 		public String call() throws Exception {
 			return "hello";
@@ -28,7 +28,7 @@ public class ThreadTest {
 		MyThread thread = new MyThread();
 		
 		thread.start();
-		//调用wait方法需要先获取锁，不然会抛出IllegalMonitorStateException
+		//璋冪敤wait鏂规硶闇�瑕佸厛鑾峰彇閿侊紝涓嶇劧浼氭姏鍑篒llegalMonitorStateException
 		synchronized (thread) {
 				thread.wait();
 		}
@@ -37,7 +37,7 @@ public class ThreadTest {
 		new Thread(task).start();
 		new Thread(task).start();
 		
-		FutureTask<String> futureTask = new FutureTask<>(new CallerTask());
+		FutureTask<String> futureTask = new FutureTask<String>(new CallerTask());
 		new Thread(futureTask).start();
 		try {
 			String result = futureTask.get();

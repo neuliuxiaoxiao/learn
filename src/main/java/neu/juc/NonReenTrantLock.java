@@ -36,25 +36,21 @@ public class NonReenTrantLock implements Lock,Serializable{
 	}
 	private final Sync sync = new Sync();
 	
-	@Override
 	public void lock() {
 		sync.acquire(1);
 		
 	}
 
 
-	@Override
 	public boolean tryLock() {
 		return sync.tryAcquire(1);
 	}
 
 
-	@Override
 	public void unlock() {
 		sync.release(1);
 	}
 
-	@Override
 	public Condition newCondition() {
 		return sync.newCondition();
 	}
@@ -63,13 +59,11 @@ public class NonReenTrantLock implements Lock,Serializable{
 	}
 
 
-	@Override
 	public void lockInterruptibly() throws InterruptedException {
 		sync.acquireInterruptibly(1);
 	}
 
 
-	@Override
 	public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
 		return sync.tryAcquireNanos(1, unit.toNanos(timeout));
 	}

@@ -45,23 +45,23 @@ public class Tree {
 		return root;
 	}
 	
-	private boolean symmetric(TreeNode p, TreeNode q) /* 判断两棵树是否对称 */
+	private boolean symmetric(TreeNode p, TreeNode q) /* 鍒ゆ柇涓ゆ５鏍戞槸鍚﹀绉� */
 	{
 		if (p == null && q == null)
-			return true; // 都是空
+			return true; // 閮芥槸绌�
 		if (p == null || q == null)
-			return false; // 只有一个空
+			return false; // 鍙湁涓�涓┖
 		return (p.val == q.val) && symmetric(p.left, q.right) && symmetric(p.right, q.left);
-		/* 树p和树q对称的条件：p和q的值相同，并且p的左子树与q的右子树对称，p的右子树与q的左子树对称 */
+		/* 鏍憄鍜屾爲q瀵圭О鐨勬潯浠讹細p鍜宷鐨勫�肩浉鍚岋紝骞朵笖p鐨勫乏瀛愭爲涓巕鐨勫彸瀛愭爲瀵圭О锛宲鐨勫彸瀛愭爲涓巕鐨勫乏瀛愭爲瀵圭О */
 	}
 
 	public List<List<Integer>> levelOrder(TreeNode root) {
 		List<List<Integer>> result = new ArrayList<List<Integer>>();
 		if(root==null) return result;
-		Queue<TreeNode> queue = new LinkedList<>(); 
+		Queue<TreeNode> queue = new LinkedList<TreeNode>(); 
 		queue.offer(root);
 		while(!queue.isEmpty()){
-			List<Integer> level = new ArrayList<>();
+			List<Integer> level = new ArrayList<Integer>();
 			TreeNode curr = null;
 			int size = queue.size();
 			for(int i=0;i<size;i++){

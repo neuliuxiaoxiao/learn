@@ -36,7 +36,6 @@ public class JDKProxy implements InvocationHandler {
      * @return
      * @throws Throwable
      */
-    @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
         if("addUser".equals(method.getName())){
