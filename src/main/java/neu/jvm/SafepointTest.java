@@ -20,7 +20,6 @@ public class SafepointTest {
             new Object().hashCode();
         }
     }
-
     public static void main(String[] args) {
         new Thread(SafepointTest::foo).start();
         new Thread(SafepointTest::bar).start();

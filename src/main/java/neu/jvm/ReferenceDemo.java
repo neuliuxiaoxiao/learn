@@ -10,6 +10,7 @@ package neu.jvm;
  */
 public class ReferenceDemo {
 
+	
 	public Object instance = null;
 	private static final int _1MB = 1024 * 1024;
 	private byte[] bigSize = new byte[10 * _1MB];
