@@ -2,6 +2,7 @@ package structure.algorithm.linkedlist;
 
 import java.util.List;
 
+//反转列表
 public class ReverseLinkedList {
 
     public ListNode reverseList(ListNode head){
@@ -22,4 +23,5 @@ public class ReverseLinkedList {
         head.next=null;//反转之后 头结点指向null
         return p;
     }
+
 }

@@ -2,6 +2,7 @@ package structure.algorithm.linkedlist;
 
 import jdk.nashorn.internal.ir.LiteralNode;
 
+//两两反转
 public class SwapLinkedList {
     public ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null) return head;
