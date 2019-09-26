@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import neu.rpc.request.CalculateRpcRequest;
 
 public class CalculatorImpl implements Calculator {
+    @Override
     public int add(int a, int b) {
         return a + b;
     }

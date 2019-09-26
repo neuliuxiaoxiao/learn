@@ -10,7 +10,7 @@ import neu.aop.UserDaoImp;
 public class JDKProxy implements InvocationHandler {
 
     /**
-     * Òª±»´úÀíµÄÄ¿±ê¶ÔÏó
+     * Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     private UserDao target;
 
@@ -19,7 +19,7 @@ public class JDKProxy implements InvocationHandler {
     }
 
     /**
-     * ´´½¨´úÀíÀà
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     public UserDao createProxy(){
@@ -29,20 +29,21 @@ public class JDKProxy implements InvocationHandler {
 
 
     /**
-     * µ÷ÓÃ±»´úÀíÀà(Ä¿±ê¶ÔÏó)µÄÈÎÒâ·½·¨¶¼»á´¥·¢invoke·½·¨
+     * ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½ï¿½â·½ï¿½ï¿½ï¿½ï¿½ï¿½á´¥ï¿½ï¿½invokeï¿½ï¿½ï¿½ï¿½
      * @param proxy
      * @param method
      * @param args
      * @return
      * @throws Throwable
      */
+    @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
         if("addUser".equals(method.getName())){
-            // ¼ÇÂ¼ÈÕÖ¾:
-            System.out.println("ÈÕÖ¾¼ÇÂ¼======");
+            // ï¿½ï¿½Â¼ï¿½ï¿½Ö¾:
+            System.out.println("ï¿½ï¿½Ö¾ï¿½ï¿½Â¼======");
 
-            //µ÷ÓÃÄ¿±ê¶ÔÏóµÄ·½·¨
+            //ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
             Object result = method.invoke(target, args);
             return result;
         }
@@ -50,11 +51,11 @@ public class JDKProxy implements InvocationHandler {
     }
     public static void main(String args[]){
     	UserDao a=new UserDaoImp();
-        //´´½¨JDK´úÀí
+        //ï¿½ï¿½ï¿½ï¿½JDKï¿½ï¿½ï¿½ï¿½
         JDKProxy jdkProxy=new JDKProxy(a);
-        //´´½¨´úÀí¶ÔÏó
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         UserDao proxy=jdkProxy.createProxy();
-        //Ö´ÐÐ´úÀí¶ÔÏó·½·¨
+        //Ö´ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ó·½·ï¿½
         proxy.addUser();
     }
 }

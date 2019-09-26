@@ -6,7 +6,8 @@ public class ThreadLocalTest2 {
 	public static void main(String[] args) {
 		threadLocal.set("hello");
 		new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				System.out.println(threadLocal.get());
 			}
 		}).start();

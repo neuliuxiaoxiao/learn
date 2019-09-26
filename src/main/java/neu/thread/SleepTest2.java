@@ -8,7 +8,8 @@ public class SleepTest2 {
 	private static final Lock lock = new ReentrantLock();
 	public static void main(String[] args) throws InterruptedException {
 		Thread threadA = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				lock.lock();
 				try {
 					System.out.println("child threadA is in sleep");
@@ -22,7 +23,8 @@ public class SleepTest2 {
 			}
 		});
 		Thread threadB = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				lock.lock();
 				try {
 					System.out.println("child threadB is in sleep");
@@ -38,7 +40,8 @@ public class SleepTest2 {
 		//threadA.start();
 		//threadB.start();
 		Thread thread = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				try {
 					System.out.println("child thread is in sleep");
 					Thread.sleep(10000);

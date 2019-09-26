@@ -22,8 +22,9 @@ public class HuffmanMinHeap {
 		}
 
 		// 从(size/2-1) --> 0逐次遍历。遍历之后，得到的数组实际上是一个最小堆。
-		for (int i = a.length / 2 - 1; i >= 0; i--)
-			filterdown(i, a.length-1);
+		for (int i = a.length / 2 - 1; i >= 0; i--) {
+            filterdown(i, a.length-1);
+        }
 	}
 
 	/* 
@@ -42,13 +43,14 @@ public class HuffmanMinHeap {
 
 		while(l <= end) {
 			// "l"是左孩子，"l+1"是右孩子
-			if(l < end && (mHeap.get(l).compareTo(mHeap.get(l+1))>0))
-				l++;		// 左右两孩子中选择较小者，即mHeap[l+1]
+			if(l < end && (mHeap.get(l).compareTo(mHeap.get(l+1))>0)) {
+                l++;		// 左右两孩子中选择较小者，即mHeap[l+1]
+            }
 
 			int cmp = tmp.compareTo(mHeap.get(l));
-			if(cmp <= 0)
-				break;		//调整结束
-			else {
+			if(cmp <= 0) {
+                break;		//调整结束
+            } else {
 				mHeap.set(c, mHeap.get(l));
 				c = l;
 				l = 2*l + 1;   
@@ -72,9 +74,9 @@ public class HuffmanMinHeap {
 
 		while(c > 0) {
 			int cmp = mHeap.get(p).compareTo(tmp);
-			if(cmp <= 0)
-				break;
-			else {
+			if(cmp <= 0) {
+                break;
+            } else {
 				mHeap.set(c, mHeap.get(p));
 				c = p;
 				p = (p-1)/2;   
@@ -113,8 +115,9 @@ public class HuffmanMinHeap {
 		int size = mHeap.size();
 
 		// 如果"堆"已空，则返回
-		if(size == 0)
-			return null;
+		if(size == 0) {
+            return null;
+        }
 
 		// 将"最小节点"克隆一份，将克隆得到的对象赋值给node
 		HuffmanNode node = (HuffmanNode)mHeap.get(0).clone();
@@ -124,8 +127,9 @@ public class HuffmanMinHeap {
 		// 删除最后的元素
 		mHeap.remove(size-1);
 
-		if (mHeap.size() > 1)
-			filterdown(0, mHeap.size()-1);
+		if (mHeap.size() > 1) {
+            filterdown(0, mHeap.size()-1);
+        }
 
 		return node;
 	}

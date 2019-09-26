@@ -8,23 +8,23 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Cache {
-	// ¼üÖµ¶Ô¼¯ºÏ
+	// ï¿½ï¿½Öµï¿½Ô¼ï¿½ï¿½ï¿½
 	private final static Map<String, Entity> map = new HashMap<>();
-	//¶¨Ê±Æ÷Ïß³Ì³Ø£¬ÓÃÓÚÇå³ý¹ýÆÚ»º´æ
+	//ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ß³Ì³Ø£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½
     private final static ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 
     public synchronized static void put(String key, Object data) {
         Cache.put(key, data, 0);
     }
     public synchronized static void put(final String key, Object data, long expire) {
-        //Çå³ýÔ­¼üÖµ¶Ô
+        //ï¿½ï¿½ï¿½Ô­ï¿½ï¿½Öµï¿½ï¿½
         Cache.remove(key);
-        //ÉèÖÃ¹ýÆÚÊ±¼ä
+        //ï¿½ï¿½ï¿½Ã¹ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
         if (expire > 0) {
             Future future = executor.schedule(new Runnable() {
                 @Override
                 public void run() {
-                    //¹ýÆÚºóÇå³ý¸Ã¼üÖµ¶Ô
+                    //ï¿½ï¿½ï¿½Úºï¿½ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½Öµï¿½ï¿½
                     synchronized (Cache.class) {
                         map.remove(key);
                     }
@@ -32,7 +32,7 @@ public class Cache {
             }, expire, TimeUnit.MILLISECONDS);
             map.put(key, new Entity(data, future));
         } else {
-            //²»ÉèÖÃ¹ýÆÚÊ±¼ä
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Ã¹ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
             map.put(key, new Entity(data, null));
         }
     }
@@ -44,24 +44,28 @@ public class Cache {
         return clazz.cast(Cache.get(key));
     }
     public synchronized static Object remove(String key) {
-        //Çå³ýÔ­»º´æÊý¾Ý
+        //ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Entity entity = map.remove(key);
-        if (entity == null) return null;
-        //Çå³ýÔ­¼üÖµ¶Ô¶¨Ê±Æ÷
+        if (entity == null) {
+            return null;
+        }
+        //ï¿½ï¿½ï¿½Ô­ï¿½ï¿½Öµï¿½Ô¶ï¿½Ê±ï¿½ï¿½
         Future future = entity.getFuture();
-        if (future != null) future.cancel(true);
+        if (future != null) {
+            future.cancel(true);
+        }
         return entity.getValue();
     }
     public synchronized static int size() {
         return map.size();
     }
 	/**
-	 * »º´æÊµÌåÀà
+	 * ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½
 	 */
 	private static class Entity {
-		// ¼üÖµ¶ÔµÄvalue
+		// ï¿½ï¿½Öµï¿½Ôµï¿½value
 		private Object value;
-		// ¶¨Ê±Æ÷Future
+		// ï¿½ï¿½Ê±ï¿½ï¿½Future
 		private Future future;
 		public Entity(Object value, Future future) {
 			this.value = value;

@@ -21,6 +21,7 @@ public class NettyRpcProxy {
 
 	public static Object create(final Class target) {
         return Proxy.newProxyInstance(target.getClassLoader(), new Class[]{target}, new InvocationHandler() {
+            @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 //·â×°ClassInfo
                 ClassInfo classInfo = new ClassInfo();

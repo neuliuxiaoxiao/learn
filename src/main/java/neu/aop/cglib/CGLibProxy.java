@@ -16,41 +16,42 @@ public class CGLibProxy implements MethodInterceptor {
 	}
 
 	public Object createProxy() {
-		// Ê¹ÓÃCGLIBÉú³É´úÀí:
-		// 1.ÉùÃ÷ÔöÇ¿ÀàÊµÀý,ÓÃÓÚÉú²ú´úÀíÀà
+		// Ê¹ï¿½ï¿½CGLIBï¿½ï¿½ï¿½É´ï¿½ï¿½ï¿½:
+		// 1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½Êµï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Enhancer enhancer = new Enhancer();
-		// 2.ÉèÖÃ±»´úÀíÀà×Ö½ÚÂë£¬CGLIB¸ù¾Ý×Ö½ÚÂëÉú³É±»´úÀíÀàµÄ×ÓÀà
+		// 2.ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ë£¬CGLIBï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		enhancer.setSuperclass(target.getClass());
-		// 3.//ÉèÖÃ»Øµ÷º¯Êý£¬¼´Ò»¸ö·½·¨À¹½Ø
+		// 3.//ï¿½ï¿½ï¿½Ã»Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		enhancer.setCallback(this);
-		// 4.´´½¨´úÀí:
+		// 4.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:
 		return (Object) enhancer.create();
 	}
 
 	/**
-	 * »Øµ÷º¯Êý
+	 * ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param proxy
-	 *            ´úÀí¶ÔÏó
+	 *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param method
-	 *            Î¯ÍÐÀà·½·¨
+	 *            Î¯ï¿½ï¿½ï¿½à·½ï¿½ï¿½
 	 * @param args
-	 *            ·½·¨²ÎÊý
+	 *            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param methodProxy
-	 *            Ã¿¸ö±»´úÀíµÄ·½·¨¶¼¶ÔÓ¦Ò»¸öMethodProxy¶ÔÏó£¬
-	 *            methodProxy.invokeSuper·½·¨×îÖÕµ÷ÓÃÎ¯ÍÐÀà(Ä¿±êÀà)µÄÔ­Ê¼·½·¨
+	 *            Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦Ò»ï¿½ï¿½MethodProxyï¿½ï¿½ï¿½ï¿½
+	 *            methodProxy.invokeSuperï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½Î¯ï¿½ï¿½ï¿½ï¿½(Ä¿ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½Ô­Ê¼ï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 * @throws Throwable
 	 */
-	public Object intercept(Object proxy, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+	@Override
+    public Object intercept(Object proxy, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
 		if ("execute".equals(method.getName())) {
 
-			System.out.println("ÈÕÖ¾¼ÇÂ¼==============");
-			// µ÷ÓÃÄ¿±êÀàµÄ·½·¨
+			System.out.println("ï¿½ï¿½Ö¾ï¿½ï¿½Â¼==============");
+			// ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
 			Object obj = methodProxy.invokeSuper(proxy, args);
 			return obj;
 		}
-		// Èç¹û²»ÐèÒªÔöÇ¿Ö±½ÓÖ´ÐÐÔ­·½·¨
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ç¿Ö±ï¿½ï¿½Ö´ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½
 		return methodProxy.invokeSuper(proxy, args);
 	}
 	public static void main(String[] args) {

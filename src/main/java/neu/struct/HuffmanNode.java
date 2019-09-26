@@ -26,7 +26,8 @@ public class HuffmanNode implements Comparable, Cloneable {
 		return obj;    
 	}
 
-	public int compareTo(Object obj) {
+	@Override
+    public int compareTo(Object obj) {
 		return this.key - ((HuffmanNode)obj).key;
 	}
 }

@@ -57,7 +57,9 @@ public class tet {
 	}
 	
 	public static boolean isPalindrome(ListNode head) {
-		if(head==null||head.next==null) return true;
+		if(head==null||head.next==null) {
+            return true;
+        }
 		ListNode middle = findMiddle(head);
 		//middle.next = 
 		ListNode p = head, q = reverseList(middle.next);
@@ -69,19 +71,24 @@ public class tet {
 	}
 
 	public static ListNode findMiddle(ListNode head) {
-		if(head.next.next==null) return head;
+		if(head.next.next==null) {
+            return head;
+        }
 		ListNode p = head, q = head;
 		while (q!= null && q.next != null) {
 			q = q.next.next;
-			if(q==null) return p;
+			if(q==null) {
+                return p;
+            }
 			p = p.next;
 		}
 		return p;
 	}
 
 	public static ListNode reverseList(ListNode head) {
-		if (head == null)
-			return null;
+		if (head == null) {
+            return null;
+        }
 
 		ListNode pre = null, next = null, cur = head;
 

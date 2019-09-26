@@ -5,7 +5,8 @@ public class WaitNotifyInterupt {
 	static Object obj = new Object();
 	public static void main(String[] args) throws InterruptedException {
 		Thread threadA = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				try {
 					System.out.println("-----begin----");
 					synchronized (obj) {

@@ -28,6 +28,7 @@ public class DynaProxy implements InvocationHandler{
     }
 //  复写InvocationHandler接口的invoke（）
     //  动态代理对象调用目标对象的任何方法前，都会调用调用处理器类的invoke（）
+    @Override
     public Object invoke(Object proxy, Method method, Object[] args)
             // 参数说明：
             // 参数1：动态代理对象（即哪个动态代理对象调用了method（）

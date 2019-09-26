@@ -28,9 +28,9 @@ public class MaxHeap <T extends Comparable<T>>{
 				left++;//左右两个孩子中选择较大者，即mHeap[left+1]
 			}
 			cmp=tmp.compareTo(mHeap.get(left));
-			if(cmp>=0)
-				break;
-			else{
+			if(cmp>=0) {
+                break;
+            } else{
 				//交换较大子节点与current
 				mHeap.set(current, mHeap.get(left));
 				current=left;
@@ -47,15 +47,20 @@ public class MaxHeap <T extends Comparable<T>>{
 	 */
 	public int remove(T data){
 		//如果堆已空，返回-1
-		if(mHeap.isEmpty()==true) return -1;
+		if(mHeap.isEmpty()==true) {
+            return -1;
+        }
 		//获取data在数组中的索引
 		int index = mHeap.indexOf(data);
-		if(index==-1) return -1;//代表不存在该元素
+		if(index==-1) {
+            return -1;//代表不存在该元素
+        }
 		int size = mHeap.size();
 		mHeap.set(index, mHeap.get(size-1));//用最后的元素填补
 		mHeap.remove(size-1);//删除最后的元素
-		if(mHeap.size()>1)
-			filterdown(index,mHeap.size()-1);//从index号位置开始自上向下调整最大堆
+		if(mHeap.size()>1) {
+            filterdown(index,mHeap.size()-1);//从index号位置开始自上向下调整最大堆
+        }
 		return 0;
 		
 	}
@@ -95,10 +100,12 @@ public class MaxHeap <T extends Comparable<T>>{
 	}
 
 	
+	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < mHeap.size(); i++)
-			sb.append(mHeap.get(i) + " ");
+		for (int i = 0; i < mHeap.size(); i++) {
+            sb.append(mHeap.get(i) + " ");
+        }
 
 		return sb.toString();
 	}

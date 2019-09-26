@@ -13,7 +13,9 @@ import java.util.Set;
 public class Test {
 
     public static ListNode reverse(ListNode head) {
-        if (head == null || head.next == null) return head;
+        if (head == null || head.next == null) {
+            return head;
+        }
         ListNode pre = reverse(head.next);
         head.next.next = head;
         head.next = null;
@@ -21,7 +23,9 @@ public class Test {
     }
 
     public static ListNode swap(ListNode head) {
-        if (head == null || head.next == null) return head;
+        if (head == null || head.next == null) {
+            return head;
+        }
         ListNode next = head.next;
         ListNode pre = swap(next.next);
         next.next = head;
@@ -70,7 +74,9 @@ public class Test {
     }
 
     public static boolean cycle2(ListNode head) {
-        if (head == null || head.next == null) return false;
+        if (head == null || head.next == null) {
+            return false;
+        }
         ListNode temp = head;
         ListNode fast = head;
         ListNode slow = head;

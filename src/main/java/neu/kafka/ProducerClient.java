@@ -29,7 +29,7 @@ public class ProducerClient {
         for(int i = 0; i < 1; i++) {
             //通过随机数产生一个ip地址作为key发送出去
             String ip = "192.168.1." + rand.nextInt(255);
-            long runtime = new Date().getTime();
+            long runtime = System.currentTimeMillis();
             //组装一条消息内容
             String msg = runtime + "---" + ip;
             try {

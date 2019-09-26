@@ -31,6 +31,7 @@ public class RBTree<T extends Comparable<T>> {
             return key;
         }
 
+        @Override
         public String toString() {
             return ""+key+(this.color==RED?"(R)":"B");
         }
@@ -53,20 +54,24 @@ public class RBTree<T extends Comparable<T>> {
         return !isRed(node);
     }
     private void setBlack(RBTNode<T> node) {
-        if (node!=null)
+        if (node!=null) {
             node.color = BLACK;
+        }
     }
     private void setRed(RBTNode<T> node) {
-        if (node!=null)
+        if (node!=null) {
             node.color = RED;
+        }
     }
     private void setParent(RBTNode<T> node, RBTNode<T> parent) {
-        if (node!=null)
+        if (node!=null) {
             node.parent = parent;
+        }
     }
     private void setColor(RBTNode<T> node, boolean color) {
-        if (node!=null)
+        if (node!=null) {
             node.color = color;
+        }
     }
 
     /*
@@ -121,16 +126,18 @@ public class RBTree<T extends Comparable<T>> {
      * (递归实现)查找"红黑树x"中键值为key的节点
      */
     private RBTNode<T> search(RBTNode<T> x, T key) {
-        if (x==null)
+        if (x==null) {
             return x;
+        }
 
         int cmp = key.compareTo(x.key);
-        if (cmp < 0)
+        if (cmp < 0) {
             return search(x.left, key);
-        else if (cmp > 0)
+        } else if (cmp > 0) {
             return search(x.right, key);
-        else
+        } else {
             return x;
+        }
     }
 
     public RBTNode<T> search(T key) {
@@ -144,12 +151,13 @@ public class RBTree<T extends Comparable<T>> {
         while (x!=null) {
             int cmp = key.compareTo(x.key);
 
-            if (cmp < 0) 
+            if (cmp < 0) {
                 x = x.left;
-            else if (cmp > 0) 
+            } else if (cmp > 0) {
                 x = x.right;
-            else
+            } else {
                 return x;
+            }
         }
 
         return x;
@@ -163,18 +171,21 @@ public class RBTree<T extends Comparable<T>> {
      * 查找最小结点：返回tree为根结点的红黑树的最小结点。
      */
     private RBTNode<T> minimum(RBTNode<T> tree) {
-        if (tree == null)
+        if (tree == null) {
             return null;
+        }
 
-        while(tree.left != null)
+        while(tree.left != null) {
             tree = tree.left;
+        }
         return tree;
     }
 
     public T minimum() {
         RBTNode<T> p = minimum(mRoot);
-        if (p != null)
+        if (p != null) {
             return p.key;
+        }
 
         return null;
     }
@@ -183,18 +194,21 @@ public class RBTree<T extends Comparable<T>> {
      * 查找最大结点：返回tree为根结点的红黑树的最大结点。
      */
     private RBTNode<T> maximum(RBTNode<T> tree) {
-        if (tree == null)
+        if (tree == null) {
             return null;
+        }
 
-        while(tree.right != null)
+        while(tree.right != null) {
             tree = tree.right;
+        }
         return tree;
     }
 
     public T maximum() {
         RBTNode<T> p = maximum(mRoot);
-        if (p != null)
+        if (p != null) {
             return p.key;
+        }
 
         return null;
     }
@@ -204,8 +218,9 @@ public class RBTree<T extends Comparable<T>> {
      */
     public RBTNode<T> successor(RBTNode<T> x) {
         // 如果x存在右孩子，则"x的后继结点"为 "以其右孩子为根的子树的最小结点"。
-        if (x.right != null)
+        if (x.right != null) {
             return minimum(x.right);
+        }
 
         // 如果x没有右孩子。则x有以下两种可能：
         // (01) x是"一个左孩子"，则"x的后继结点"为 "它的父结点"。
@@ -224,8 +239,9 @@ public class RBTree<T extends Comparable<T>> {
      */
     public RBTNode<T> predecessor(RBTNode<T> x) {
         // 如果x存在左孩子，则"x的前驱结点"为 "以其左孩子为根的子树的最大结点"。
-        if (x.left != null)
+        if (x.left != null) {
             return maximum(x.left);
+        }
 
         // 如果x没有左孩子。则x有以下两种可能：
         // (01) x是"一个右孩子"，则"x的前驱结点"为 "它的父结点"。
@@ -260,8 +276,9 @@ public class RBTree<T extends Comparable<T>> {
         // 将 “y的左孩子” 设为 “x的右孩子”；
         // 如果y的左孩子非空，将 “x” 设为 “y的左孩子的父亲”
         x.right = y.left;
-        if (y.left != null)
+        if (y.left != null) {
             y.left.parent = x;
+        }
 
         // 将 “x的父亲” 设为 “y的父亲”
         y.parent = x.parent;
@@ -269,10 +286,11 @@ public class RBTree<T extends Comparable<T>> {
         if (x.parent == null) {
             this.mRoot = y;            // 如果 “x的父亲” 是空节点，则将y设为根节点
         } else {
-            if (x.parent.left == x)
+            if (x.parent.left == x) {
                 x.parent.left = y;    // 如果 x是它父节点的左孩子，则将y设为“x的父节点的左孩子”
-            else
+            } else {
                 x.parent.right = y;    // 如果 x是它父节点的左孩子，则将y设为“x的父节点的左孩子”
+            }
         }
         
         // 将 “x” 设为 “y的左孩子”
@@ -301,8 +319,9 @@ public class RBTree<T extends Comparable<T>> {
         // 将 “x的右孩子” 设为 “y的左孩子”；
         // 如果"x的右孩子"不为空的话，将 “y” 设为 “x的右孩子的父亲”
         y.left = x.right;
-        if (x.right != null)
+        if (x.right != null) {
             x.right.parent = y;
+        }
 
         // 将 “y的父亲” 设为 “x的父亲”
         x.parent = y.parent;
@@ -310,10 +329,11 @@ public class RBTree<T extends Comparable<T>> {
         if (y.parent == null) {
             this.mRoot = x;            // 如果 “y的父亲” 是空节点，则将x设为根节点
         } else {
-            if (y == y.parent.right)
+            if (y == y.parent.right) {
                 y.parent.right = x;    // 如果 y是它父节点的右孩子，则将x设为“y的父节点的右孩子”
-            else
+            } else {
                 y.parent.left = x;    // (y是它父节点的左孩子) 将x设为“x的父节点的左孩子”
+            }
         }
 
         // 将 “y” 设为 “x的右孩子”
@@ -410,19 +430,21 @@ public class RBTree<T extends Comparable<T>> {
         while (x != null) {
             y = x;
             cmp = node.key.compareTo(x.key);
-            if (cmp < 0)
+            if (cmp < 0) {
                 x = x.left;
-            else
+            } else {
                 x = x.right;
+            }
         }
 
         node.parent = y;
         if (y!=null) {
             cmp = node.key.compareTo(y.key);
-            if (cmp < 0)
+            if (cmp < 0) {
                 y.left = node;
-            else
+            } else {
                 y.right = node;
+            }
         } else {
             this.mRoot = node;
         }
@@ -444,8 +466,9 @@ public class RBTree<T extends Comparable<T>> {
         RBTNode<T> node=new RBTNode<T>(key,BLACK,null,null,null);
 
         // 如果新建结点失败，则返回。
-        if (node != null)
+        if (node != null) {
             insert(node);
+        }
     }
 
 
@@ -533,8 +556,9 @@ public class RBTree<T extends Comparable<T>> {
             }
         }
 
-        if (node!=null)
+        if (node!=null) {
             setBlack(node);
+        }
     }
 
     /* 
@@ -555,15 +579,17 @@ public class RBTree<T extends Comparable<T>> {
 
             // 获取后继节点
             replace = replace.right;
-            while (replace.left != null)
+            while (replace.left != null) {
                 replace = replace.left;
+            }
 
             // "node节点"不是根节点(只有根节点不存在父节点)
             if (parentOf(node)!=null) {
-                if (parentOf(node).left == node)
+                if (parentOf(node).left == node) {
                     parentOf(node).left = replace;
-                else
+                } else {
                     parentOf(node).right = replace;
+                }
             } else {
                 // "node节点"是根节点，更新根节点。
                 this.mRoot = replace;
@@ -581,8 +607,9 @@ public class RBTree<T extends Comparable<T>> {
                 parent = replace;
             } else {
                 // child不为空
-                if (child!=null)
+                if (child!=null) {
                     setParent(child, parent);
+                }
                 parent.left = child;
 
                 replace.right = node.right;
@@ -594,8 +621,9 @@ public class RBTree<T extends Comparable<T>> {
             replace.left = node.left;
             node.left.parent = replace;
 
-            if (color == BLACK)
+            if (color == BLACK) {
                 removeFixUp(child, parent);
+            }
 
             node = null;
             return ;
@@ -611,21 +639,24 @@ public class RBTree<T extends Comparable<T>> {
         // 保存"取代节点"的颜色
         color = node.color;
 
-        if (child!=null)
+        if (child!=null) {
             child.parent = parent;
+        }
 
         // "node节点"不是根节点
         if (parent!=null) {
-            if (parent.left == node)
+            if (parent.left == node) {
                 parent.left = child;
-            else
+            } else {
                 parent.right = child;
+            }
         } else {
             this.mRoot = child;
         }
 
-        if (color == BLACK)
+        if (color == BLACK) {
             removeFixUp(child, parent);
+        }
         node = null;
     }
 
@@ -639,21 +670,25 @@ public class RBTree<T extends Comparable<T>> {
     public void remove(T key) {
         RBTNode<T> node; 
 
-        if ((node = search(mRoot, key)) != null)
+        if ((node = search(mRoot, key)) != null) {
             remove(node);
+        }
     }
 
     /*
      * 销毁红黑树
      */
     private void destroy(RBTNode<T> tree) {
-        if (tree==null)
+        if (tree==null) {
             return ;
+        }
 
-        if (tree.left != null)
+        if (tree.left != null) {
             destroy(tree.left);
-        if (tree.right != null)
+        }
+        if (tree.right != null) {
             destroy(tree.right);
+        }
 
         tree=null;
     }
@@ -676,9 +711,12 @@ public class RBTree<T extends Comparable<T>> {
         if(tree != null) {
 
             if(direction==0)    // tree是根节点
+            {
                 System.out.printf("%2d(B) is root\n", tree.key);
-            else                // tree是分支节点
+            } else                // tree是分支节点
+            {
                 System.out.printf("%2d(%s) is %2d's %6s child\n", tree.key, isRed(tree)?"R":"B", key, direction==1?"right" : "left");
+            }
 
             print(tree.left, tree.key, -1);
             print(tree.right,tree.key,  1);
@@ -686,7 +724,8 @@ public class RBTree<T extends Comparable<T>> {
     }
 
     public void print() {
-        if (mRoot != null)
+        if (mRoot != null) {
             print(mRoot, mRoot.key, 0);
+        }
     }
 }

@@ -17,7 +17,9 @@ public class ReverseLinkedList {
         return prev;
     }
     public ListNode reverseListV2(ListNode head){
-        if (head==null||head.next==null) return head;
+        if (head==null||head.next==null) {
+            return head;
+        }
         ListNode p = reverseListV2(head.next);
         head.next.next=head;//迭代公式
         head.next=null;//反转之后 头结点指向null

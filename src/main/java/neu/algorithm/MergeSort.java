@@ -30,21 +30,25 @@ public class MergeSort {
         int k = 0;                // 临时区域的索引
 
         while(i <= mid && j <= end) {
-            if (a[i] <= a[j])
+            if (a[i] <= a[j]) {
                 tmp[k++] = a[i++];
-            else
+            } else {
                 tmp[k++] = a[j++];
+            }
         }
 
-        while(i <= mid)
+        while(i <= mid) {
             tmp[k++] = a[i++];
+        }
 
-        while(j <= end)
+        while(j <= end) {
             tmp[k++] = a[j++];
+        }
 
         // 将排序后的元素，全部都整合到数组a中。
-        for (i = 0; i < k; i++)
+        for (i = 0; i < k; i++) {
             a[start + i] = tmp[i];
+        }
 
         tmp=null;
     }
@@ -58,8 +62,9 @@ public class MergeSort {
      *     endi -- 数组的结束地址
      */
     public static void mergeSortUp2Down(int[] a, int start, int end) {
-        if(a==null || start >= end)
+        if(a==null || start >= end) {
             return ;
+        }
 
         int mid = (end + start)/2;
         mergeSortUp2Down(a, start, mid); // 递归排序a[start...mid]
@@ -85,13 +90,15 @@ public class MergeSort {
        // int twolen = 2 * gap;    // 两个相邻的子数组的长度
 
         // 将"每2个相邻的子数组" 进行合并排序。
-        for(i = 0; i+2*gap-1 < len; i+=(2*gap))
+        for(i = 0; i+2*gap-1 < len; i+=(2*gap)) {
             merge(a, i, i+gap-1, i+2*gap-1);
+        }
 
         // 若 i+gap-1 < len-1，则剩余一个子数组没有配对。
         // 将该子数组合并到已排序的数组中。
-        if ( i+gap-1 < len-1)
+        if ( i+gap-1 < len-1) {
             merge(a, i, i + gap - 1, len - 1);
+        }
     }
 
     /*
@@ -101,11 +108,13 @@ public class MergeSort {
      *     a -- 待排序的数组
      */
     public static void mergeSortDown2Up(int[] a) {
-        if (a==null)
+        if (a==null) {
             return ;
+        }
 
-        for(int n = 1; n < a.length; n*=2)
+        for(int n = 1; n < a.length; n*=2) {
             mergeGroups(a, a.length, n);
+        }
     }
 
     public static void main(String[] args) {
@@ -113,16 +122,18 @@ public class MergeSort {
         int a[] = {80,30,60,40,20,10,50,70};
 
         System.out.printf("before sort:");
-        for (i=0; i<a.length; i++)
+        for (i=0; i<a.length; i++) {
             System.out.printf("%d ", a[i]);
+        }
         System.out.printf("\n");
 
         mergeSortUp2Down(a, 0, a.length-1);        // 归并排序(从上往下)
         //mergeSortDown2Up(a);                    // 归并排序(从下往上)
 
         System.out.printf("after  sort:");
-        for (i=0; i<a.length; i++)
+        for (i=0; i<a.length; i++) {
             System.out.printf("%d ", a[i]);
+        }
         System.out.printf("\n");
     }
 }

@@ -82,16 +82,18 @@ public class SplayTree<T extends Comparable<T>> {
      * (递归实现)查找"伸展树x"中键值为key的节点
      */
     private SplayTreeNode<T> search(SplayTreeNode<T> x, T key) {
-        if (x==null)
+        if (x==null) {
             return x;
+        }
 
         int cmp = key.compareTo(x.key);
-        if (cmp < 0)
+        if (cmp < 0) {
             return search(x.left, key);
-        else if (cmp > 0)
+        } else if (cmp > 0) {
             return search(x.right, key);
-        else
+        } else {
             return x;
+        }
     }
 
     public SplayTreeNode<T> search(T key) {
@@ -105,12 +107,13 @@ public class SplayTree<T extends Comparable<T>> {
         while (x!=null) {
             int cmp = key.compareTo(x.key);
 
-            if (cmp < 0) 
+            if (cmp < 0) {
                 x = x.left;
-            else if (cmp > 0) 
+            } else if (cmp > 0) {
                 x = x.right;
-            else
+            } else {
                 return x;
+            }
         }
 
         return x;
@@ -124,18 +127,21 @@ public class SplayTree<T extends Comparable<T>> {
      * 查找最小结点：返回tree为根结点的伸展树的最小结点。
      */
     private SplayTreeNode<T> minimum(SplayTreeNode<T> tree) {
-        if (tree == null)
+        if (tree == null) {
             return null;
+        }
 
-        while(tree.left != null)
+        while(tree.left != null) {
             tree = tree.left;
+        }
         return tree;
     }
 
     public T minimum() {
         SplayTreeNode<T> p = minimum(mRoot);
-        if (p != null)
+        if (p != null) {
             return p.key;
+        }
 
         return null;
     }
@@ -144,18 +150,21 @@ public class SplayTree<T extends Comparable<T>> {
      * 查找最大结点：返回tree为根结点的伸展树的最大结点。
      */
     private SplayTreeNode<T> maximum(SplayTreeNode<T> tree) {
-        if (tree == null)
+        if (tree == null) {
             return null;
+        }
 
-        while(tree.right != null)
+        while(tree.right != null) {
             tree = tree.right;
+        }
         return tree;
     }
 
     public T maximum() {
         SplayTreeNode<T> p = maximum(mRoot);
-        if (p != null)
+        if (p != null) {
             return p.key;
+        }
 
         return null;
     }
@@ -174,8 +183,9 @@ public class SplayTree<T extends Comparable<T>> {
      *      c-2 "键值为key的节点"的后继节点不存在的话，则意味着，key比树中任何键值都大，那么此时，将最大节点旋转为根节点。
      */
     private SplayTreeNode<T> splay(SplayTreeNode<T> tree, T key) {
-        if (tree == null) 
+        if (tree == null) {
             return tree;
+        }
 
         SplayTreeNode<T> N = new SplayTreeNode<T>();
         SplayTreeNode<T> l = N;
@@ -187,32 +197,36 @@ public class SplayTree<T extends Comparable<T>> {
             int cmp = key.compareTo(tree.key);
             if (cmp < 0) {
 
-                if (tree.left == null)
+                if (tree.left == null) {
                     break;
+                }
 
                 if (key.compareTo(tree.left.key) < 0) {
                     c = tree.left;                           /* rotate right */
                     tree.left = c.right;
                     c.right = tree;
                     tree = c;
-                    if (tree.left == null) 
+                    if (tree.left == null) {
                         break;
+                    }
                 }
                 r.left = tree;                               /* link right */
                 r = tree;
                 tree = tree.left;
             } else if (cmp > 0) {
 
-                if (tree.right == null) 
+                if (tree.right == null) {
                     break;
+                }
 
                 if (key.compareTo(tree.right.key) > 0) {
                     c = tree.right;                          /* rotate left */
                     tree.right = c.left;
                     c.left = tree;
                     tree = c;
-                    if (tree.right == null) 
+                    if (tree.right == null) {
                         break;
+                    }
                 }
 
                 l.right = tree;                              /* link left */
@@ -251,25 +265,26 @@ public class SplayTree<T extends Comparable<T>> {
         while (x != null) {
             y = x;
             cmp = z.key.compareTo(x.key);
-            if (cmp < 0)
+            if (cmp < 0) {
                 x = x.left;
-            else if (cmp > 0)
+            } else if (cmp > 0) {
                 x = x.right;
-            else {
+            } else {
                 System.out.printf("不允许插入相同节点(%d)!\n", z.key);
                 z=null;
                 return tree;
             }
         }
 
-        if (y==null)
+        if (y==null) {
             tree = z;
-        else {
+        } else {
             cmp = z.key.compareTo(y.key);
-            if (cmp < 0)
+            if (cmp < 0) {
                 y.left = z;
-            else
+            } else {
                 y.right = z;
+            }
         }
 
         return tree;
@@ -279,8 +294,9 @@ public class SplayTree<T extends Comparable<T>> {
         SplayTreeNode<T> z=new SplayTreeNode<T>(key,null,null);
 
         // 如果新建结点失败，则返回。
-        if ((z=new SplayTreeNode<T>(key,null,null)) == null)
+        if ((z=new SplayTreeNode<T>(key,null,null)) == null) {
             return ;
+        }
 
         // 插入节点
         mRoot = insert(mRoot, z);
@@ -298,12 +314,14 @@ public class SplayTree<T extends Comparable<T>> {
     private SplayTreeNode<T> remove(SplayTreeNode<T> tree, T key) {
         SplayTreeNode<T> x;
 
-        if (tree == null) 
+        if (tree == null) {
             return null;
+        }
 
         // 查找键值为key的节点，找不到的话直接返回。
-        if (search(tree, key) == null)
+        if (search(tree, key) == null) {
             return tree;
+        }
 
         // 将key对应的节点旋转为根节点。
         tree = splay(tree, key);
@@ -314,8 +332,9 @@ public class SplayTree<T extends Comparable<T>> {
             // 移除tree节点
             x.right = tree.right;
         }
-        else
+        else {
             x = tree.right;
+        }
 
         tree = null;
 
@@ -330,13 +349,16 @@ public class SplayTree<T extends Comparable<T>> {
      * 销毁伸展树
      */
     private void destroy(SplayTreeNode<T> tree) {
-        if (tree==null)
+        if (tree==null) {
             return ;
+        }
 
-        if (tree.left != null)
+        if (tree.left != null) {
             destroy(tree.left);
-        if (tree.right != null)
+        }
+        if (tree.right != null) {
             destroy(tree.right);
+        }
 
         tree=null;
     }
@@ -359,9 +381,12 @@ public class SplayTree<T extends Comparable<T>> {
         if(tree != null) {
 
             if(direction==0)    // tree是根节点
+            {
                 System.out.printf("%2d is root\n", tree.key);
-            else                // tree是分支节点
+            } else                // tree是分支节点
+            {
                 System.out.printf("%2d is %2d's %6s child\n", tree.key, key, direction==1?"right" : "left");
+            }
 
             print(tree.left, tree.key, -1);
             print(tree.right,tree.key,  1);
@@ -369,8 +394,9 @@ public class SplayTree<T extends Comparable<T>> {
     }
 
     public void print() {
-        if (mRoot != null)
+        if (mRoot != null) {
             print(mRoot, mRoot.key, 0);
+        }
     }
     public static void main(String[] args) {
     	

@@ -9,14 +9,16 @@ public class ThreadLocalTest {
 	static ThreadLocal<String> localVariable=new ThreadLocal<String>();
 	public static void main(String[] args) {
 		Thread threadOne = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				localVariable.set("threadOne local variable");
 				print("threadOne");
 				System.out.println("threadOne remove after:"+localVariable.get());
 			}
 		});
 		Thread threadTwo = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				localVariable.set("threadTwo local variable");
 				print("threadTwo");
 				System.out.println("threadTwo remove after:"+localVariable.get());

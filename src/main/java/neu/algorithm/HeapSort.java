@@ -25,11 +25,12 @@ public class HeapSort {
 
         for (; l <= end; c=l,l=2*l+1) {
             // "l"是左孩子，"l+1"是右孩子
-            if ( l < end && a[l] < a[l+1])
+            if ( l < end && a[l] < a[l+1]) {
                 l++;        // 左右两孩子中选择较大者，即m_heap[l+1]
-            if (tmp >= a[l])
+            }
+            if (tmp >= a[l]) {
                 break;        // 调整结束
-            else {            // 交换值
+            } else {            // 交换值
                 a[c] = a[l];
                 a[l]= tmp;
             }
@@ -47,8 +48,9 @@ public class HeapSort {
         int i,tmp;
 
         // 从(n/2-1) --> 0逐次遍历。遍历之后，得到的数组实际上是一个(最大)二叉堆。
-        for (i = n / 2 - 1; i >= 0; i--)
+        for (i = n / 2 - 1; i >= 0; i--) {
             maxHeapDown(a, i, n-1);
+        }
 
         // 从最后一个元素开始对序列进行调整，不断的缩小调整的范围直到第一个元素
         for (i = n - 1; i > 0; i--) {
@@ -80,11 +82,12 @@ public class HeapSort {
 
         for (; l <= end; c=l,l=2*l+1) {
             // "l"是左孩子，"l+1"是右孩子
-            if ( l < end && a[l] > a[l+1])
+            if ( l < end && a[l] > a[l+1]) {
                 l++;        // 左右两孩子中选择较小者
-            if (tmp <= a[l])
+            }
+            if (tmp <= a[l]) {
                 break;        // 调整结束
-            else {            // 交换值
+            } else {            // 交换值
                 a[c] = a[l];
                 a[l]= tmp;
             }
@@ -102,8 +105,9 @@ public class HeapSort {
         int i,tmp;
 
         // 从(n/2-1) --> 0逐次遍历每。遍历之后，得到的数组实际上是一个最小堆。
-        for (i = n / 2 - 1; i >= 0; i--)
+        for (i = n / 2 - 1; i >= 0; i--) {
             minHeapDown(a, i, n-1);
+        }
 
         // 从最后一个元素开始对序列进行调整，不断的缩小调整的范围直到第一个元素
         for (i = n - 1; i > 0; i--) {
@@ -122,16 +126,18 @@ public class HeapSort {
         int a[] = {20,30,90,40,70,110,60,10,100,50,80};
 
         System.out.printf("before sort:");
-        for (i=0; i<a.length; i++)
+        for (i=0; i<a.length; i++) {
             System.out.printf("%d ", a[i]);
+        }
         System.out.printf("\n");
 
         heapSortAsc(a, a.length);            // 升序排列
         //heapSortDesc(a, a.length);        // 降序排列
 
         System.out.printf("after  sort:");
-        for (i=0; i<a.length; i++)
+        for (i=0; i<a.length; i++) {
             System.out.printf("%d ", a[i]);
+        }
         System.out.printf("\n");
     }
 }

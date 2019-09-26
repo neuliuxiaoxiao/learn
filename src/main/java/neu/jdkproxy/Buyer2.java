@@ -4,6 +4,7 @@ package neu.jdkproxy;
 //实现抽象目标对象的接口
 public class Buyer2 implements Subject  {
 
+ @Override
  public void buybuybuy() {
      System.out.println("小何要买iPhone");
  }

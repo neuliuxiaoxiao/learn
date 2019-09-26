@@ -1,6 +1,6 @@
 package neu.leetcode;
 
-//ÂòÂô¹ÉÆ±
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ±
 public class DynamicStock {
 
 	public static void main(String[] args) {
@@ -9,10 +9,11 @@ public class DynamicStock {
 		System.out.println(maxProfit3(new int[] { 7, 1, 5, 3, 6, 4 }));
 	}
 
-	// Ö»ÂòÂôÒ»´Î
+	// Ö»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 	public static int maxProfit(int[] prices) {
-		if (prices.length <= 1)
-			return 0;
+		if (prices.length <= 1) {
+            return 0;
+        }
 		int buy = -prices[0], shell = 0;
 		for (int i = 1; i < prices.length; i++) {
 			buy = Math.max(buy, -prices[i]);
@@ -21,19 +22,20 @@ public class DynamicStock {
 		return shell;
 	}
 
-	// ÎÞÏÞ´Î
+	// ï¿½ï¿½ï¿½Þ´ï¿½
 	public static int maxProfit2(int[] prices) {
-		if (prices.length <= 1)
-			return 0;
+		if (prices.length <= 1) {
+            return 0;
+        }
 		int buy = -prices[0], shell = 0;
 		for (int i = 1; i < prices.length; i++) {
 			shell = Math.max(shell, buy + prices[i]);
-			buy = Math.max(buy, shell-prices[i]);//ËµÃ÷ÂòÈëÖ®Ç°¿ÉÒÔÓµÓÐÂô³öµÄÇ®
+			buy = Math.max(buy, shell-prices[i]);//Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®Ç°ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç®
 		}
 		return shell;
 	}
 	
-	//ÂòÂôÁ½´Î
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public static int maxProfit3(int[] prices) {
         int fstBuy = Integer.MIN_VALUE, fstSell = 0;
         int secBuy = Integer.MIN_VALUE, secSell = 0;

@@ -15,12 +15,14 @@ public class FIFOMutes {
 		waiters.add(current);
 		while (waiters.peek()!=current||!locked.compareAndSet(false, true)) {
 			LockSupport.park(this);
-			if(Thread.interrupted())
-				wasInterrupted=true;
+			if(Thread.interrupted()) {
+                wasInterrupted=true;
+            }
 		}
 		waiters.remove();
-		if(wasInterrupted)
-			current.interrupt();
+		if(wasInterrupted) {
+            current.interrupt();
+        }
 	}
 	public void unlock(){
 		locked.set(false);

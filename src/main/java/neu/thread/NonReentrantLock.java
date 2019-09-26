@@ -9,10 +9,12 @@ import java.util.concurrent.locks.Lock;
 public class NonReentrantLock implements Lock,Serializable{
 	
 	private static class Sync extends AbstractQueuedSynchronizer{
-		protected boolean isHeldExclusively(){
+		@Override
+        protected boolean isHeldExclusively(){
 			return getState()==1;
 		}
-		public boolean tryAcquire(int acquires){
+		@Override
+        public boolean tryAcquire(int acquires){
 			assert acquires ==1;
 			if(compareAndSetState(0,1)){
 				setExclusiveOwnerThread(Thread.currentThread());
@@ -20,7 +22,8 @@ public class NonReentrantLock implements Lock,Serializable{
 			}
 			return false;
 		}
-		protected boolean tryRelease(int releases){
+		@Override
+        protected boolean tryRelease(int releases){
 			assert releases ==1;
 			if(getState()==0){
 				throw new IllegalMonitorStateException();

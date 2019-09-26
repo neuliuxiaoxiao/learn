@@ -6,6 +6,7 @@ package neu.algorithm;
  */
 public class BubbleSort implements IArraySort {
 
+	@Override
 	public void sort(int[] sourceArray) {
 		int n = sourceArray.length;
 		int flag;//标记  代表是否发生了交换 如果没有发生交换 说明数组已经是有序的了 所以可以直接返回
@@ -21,8 +22,9 @@ public class BubbleSort implements IArraySort {
 					flag = 1;//发生变换
 				}
 			}
-			if(flag==0)
-				break;
+			if(flag==0) {
+                break;
+            }
 		}
 	}
 

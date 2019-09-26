@@ -44,7 +44,9 @@ public class CycleLinkedListII {
         while (fast!=null&&fast.next!=null){
             fast=fast.next.next;
             slow=slow.next;
-            if (fast==slow) return slow;
+            if (fast==slow) {
+                return slow;
+            }
         }
         return null;
     }

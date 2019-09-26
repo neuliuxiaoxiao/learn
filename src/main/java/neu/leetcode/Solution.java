@@ -7,8 +7,9 @@ public class Solution {
 	static List<List<String>>  res = new ArrayList<>();
 	//鍒ゆ柇鏄惁鏄洖鏂囦覆
 	public static boolean isPalindrome(String s) {
-        if(s.length() == 0)
-             return true;
+        if(s.length() == 0) {
+            return true;
+        }
         int l = 0, r = s.length() - 1;
         while(l < r){
             //纭畾鎸囧畾鐨勫瓧绗︽槸鍚︿负瀛楁瘝鎴栨暟瀛�
@@ -17,8 +18,9 @@ public class Solution {
             }else if(!Character.isLetterOrDigit(s.charAt(r))){
                 r--;
             }else{
-                if(Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r)))
+                if(Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r))) {
                     return false;
+                }
                 l++;
                 r--;
             } 
@@ -28,8 +30,9 @@ public class Solution {
 	
 	//鍥炴枃涓插垎鍓�
 	public static List<List<String>> partition(String s){
-		if(s==null||s.length()==0)
-			return res;
+		if(s==null||s.length()==0) {
+            return res;
+        }
 		dfs(s,new ArrayList<String>(),0);
 		return res;
 		

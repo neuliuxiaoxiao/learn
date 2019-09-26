@@ -23,6 +23,7 @@ public class LeftistHeap<T extends Comparable<T>> {
             this.right = right;
         }
 
+        @Override
         public String toString() {
             return "key:"+key;
         }
@@ -82,8 +83,12 @@ public class LeftistHeap<T extends Comparable<T>> {
      * 合并"左倾堆x"和"左倾堆y"
      */
     private LeftistNode<T> merge(LeftistNode<T> x, LeftistNode<T> y) {
-        if(x == null) return y;
-        if(y == null) return x;
+        if(x == null) {
+            return y;
+        }
+        if(y == null) {
+            return x;
+        }
 
         // 合并x和y时，将x作为合并后的树的根；
         // 这里的操作是保证: x的key < y的key
@@ -103,10 +108,11 @@ public class LeftistHeap<T extends Comparable<T>> {
             x.left = x.right;
             x.right = tmp;
         }
-        if (x.right == null || x.left == null)
+        if (x.right == null || x.left == null) {
             x.npl = 0;
-        else
+        } else {
             x.npl = (x.left.npl > x.right.npl) ? (x.right.npl + 1) : (x.left.npl + 1);
+        }
 
         return x;
     }
@@ -125,8 +131,9 @@ public class LeftistHeap<T extends Comparable<T>> {
         LeftistNode<T> node = new LeftistNode<T>(key,null,null);
 
         // 如果新建结点失败，则返回。
-        if (node != null)
+        if (node != null) {
             this.mRoot = merge(this.mRoot, node);
+        }
     }
 
     /* 
@@ -136,8 +143,9 @@ public class LeftistHeap<T extends Comparable<T>> {
      *     返回被删除的节点的键值
      */
     public T remove() {
-        if (this.mRoot == null)
+        if (this.mRoot == null) {
             return null;
+        }
 
         T key = this.mRoot.key;
         LeftistNode<T> l = this.mRoot.left;
@@ -153,13 +161,16 @@ public class LeftistHeap<T extends Comparable<T>> {
      * 销毁左倾堆
      */
     private void destroy(LeftistNode<T> heap) {
-        if (heap==null)
+        if (heap==null) {
             return ;
+        }
 
-        if (heap.left != null)
+        if (heap.left != null) {
             destroy(heap.left);
-        if (heap.right != null)
+        }
+        if (heap.right != null) {
             destroy(heap.right);
+        }
 
         heap=null;
     }
@@ -182,9 +193,12 @@ public class LeftistHeap<T extends Comparable<T>> {
         if(heap != null) {
 
             if(direction==0)    // heap是根节点
+            {
                 System.out.printf("%2d(%d) is root\n", heap.key, heap.npl);
-            else                // heap是分支节点
+            } else                // heap是分支节点
+            {
                 System.out.printf("%2d(%d) is %2d's %6s child\n", heap.key, heap.npl, key, direction==1?"right" : "left");
+            }
 
             print(heap.left, heap.key, -1);
             print(heap.right,heap.key,  1);
@@ -192,7 +206,8 @@ public class LeftistHeap<T extends Comparable<T>> {
     }
 
     public void print() {
-        if (mRoot != null)
+        if (mRoot != null) {
             print(mRoot, mRoot.key, 0);
+        }
     }
 }

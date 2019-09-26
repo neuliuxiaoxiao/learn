@@ -14,7 +14,8 @@ public class NonLockTest {
 	public static void main(String[] args) {
 		Thread producer = new Thread(new Runnable() {
 			
-			public void run() {
+			@Override
+            public void run() {
 				lock.lock();
 				try {
 					while(queue.size()==queueSize){
@@ -31,7 +32,8 @@ public class NonLockTest {
 			}
 		});
 		Thread consumer = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				lock.lock();
 				try {
 					while(0==queue.size()){

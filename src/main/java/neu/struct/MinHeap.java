@@ -32,13 +32,14 @@ public class MinHeap<T extends Comparable<T>> {
         while(l <= end) {
             int cmp = mHeap.get(l).compareTo(mHeap.get(l+1));
             // "l"是左孩子，"l+1"是右孩子
-            if(l < end && cmp>0)
+            if(l < end && cmp>0) {
                 l++;        // 左右两孩子中选择较小者，即mHeap[l+1]
+            }
 
             cmp = tmp.compareTo(mHeap.get(l));
-            if(cmp <= 0)
+            if(cmp <= 0) {
                 break;        //调整结束
-            else {
+            } else {
                 mHeap.set(c, mHeap.get(l));
                 c = l;
                 l = 2*l + 1;   
@@ -56,20 +57,23 @@ public class MinHeap<T extends Comparable<T>> {
      */
     public int remove(T data) {
         // 如果"堆"已空，则返回-1
-        if(mHeap.isEmpty() == true)
+        if(mHeap.isEmpty() == true) {
             return -1;
+        }
 
         // 获取data在数组中的索引
         int index = mHeap.indexOf(data);
-        if (index==-1)
+        if (index==-1) {
             return -1;
+        }
 
         int size = mHeap.size();
         mHeap.set(index, mHeap.get(size-1));// 用最后元素填补
         mHeap.remove(size - 1);                // 删除最后的元素
 
-        if (mHeap.size() > 1)
+        if (mHeap.size() > 1) {
             filterdown(index, mHeap.size()-1);    // 从index号位置开始自上向下调整为最小堆
+        }
 
         return 0;
     }
@@ -89,9 +93,9 @@ public class MinHeap<T extends Comparable<T>> {
 
         while(c > 0) {
             int cmp = mHeap.get(p).compareTo(tmp);
-            if(cmp <= 0)
+            if(cmp <= 0) {
                 break;
-            else {
+            } else {
                 mHeap.set(c, mHeap.get(p));
                 c = p;
                 p = (p-1)/2;   
@@ -110,10 +114,12 @@ public class MinHeap<T extends Comparable<T>> {
         filterup(size);        // 向上调整堆
     }
        
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int i=0; i<mHeap.size(); i++)
+        for (int i=0; i<mHeap.size(); i++) {
             sb.append(mHeap.get(i) +" ");
+        }
 
         return sb.toString();
     }

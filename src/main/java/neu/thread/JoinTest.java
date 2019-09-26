@@ -30,7 +30,8 @@ public class JoinTest {
 
 	public static void main(String[] args) {
 		Thread threadA = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				System.out.println("threadA begin run");
 				for(;;){
 					
@@ -39,7 +40,8 @@ public class JoinTest {
 		});
 		final Thread mainThread = Thread.currentThread();
 		Thread threadB = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				try {
 					Thread.sleep(1000);
 				}

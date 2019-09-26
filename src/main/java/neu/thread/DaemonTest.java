@@ -4,7 +4,8 @@ public class DaemonTest {
 
 	public static void main(String[] args) {
 		Thread thread = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				for(;;){}
 			}
 		});

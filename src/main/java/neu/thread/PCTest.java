@@ -9,7 +9,8 @@ public class PCTest {
 		final Queue queue = new Queue();
 		final int MAX_SIZE=3;
 		new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				//生产线程
 				synchronized (queue) {
 					//消费队列满，则等待队列空闲6
@@ -30,7 +31,8 @@ public class PCTest {
 		}).start();
 		
 		new Thread(new Runnable(){
-			public void run() {
+			@Override
+            public void run() {
 				//消费者线程
 				synchronized (queue) {
 					//消费者队列为空

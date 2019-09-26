@@ -91,13 +91,16 @@ public class Huffman {
 	 * 销毁Huffman树
 	 */
 	private void destroy(HuffmanNode tree) {
-		if (tree==null)
-			return ;
+		if (tree==null) {
+            return ;
+        }
 
-		if (tree.left != null)
-			destroy(tree.left);
-		if (tree.right != null)
-			destroy(tree.right);
+		if (tree.left != null) {
+            destroy(tree.left);
+        }
+		if (tree.right != null) {
+            destroy(tree.right);
+        }
 
 		tree=null;
 	}
@@ -120,9 +123,12 @@ public class Huffman {
 		if(tree != null) {
 
 			if(direction==0)	// tree是根节点
-				System.out.printf("%2d is root\n", tree.key);
-			else				// tree是分支节点
-				System.out.printf("%2d is %2d's %6s child\n", tree.key, key, direction==1?"right" : "left");
+            {
+                System.out.printf("%2d is root\n", tree.key);
+            } else				// tree是分支节点
+            {
+                System.out.printf("%2d is %2d's %6s child\n", tree.key, key, direction==1?"right" : "left");
+            }
 
 			print(tree.left, tree.key, -1);
 			print(tree.right,tree.key,  1);
@@ -130,7 +136,8 @@ public class Huffman {
 	}
 
 	public void print() {
-		if (mRoot != null)
-			print(mRoot, mRoot.key, 0);
+		if (mRoot != null) {
+            print(mRoot, mRoot.key, 0);
+        }
 	}
 }

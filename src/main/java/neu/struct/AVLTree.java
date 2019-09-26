@@ -24,8 +24,9 @@ public class AVLTree<T extends Comparable<T>> {
 	 * 获取树的高度
 	 * */
 	private int height(AVLTreeNode<T> tree){
-		if(tree!=null)
-			return tree.height;
+		if(tree!=null) {
+            return tree.height;
+        }
 		return 0;
 	}
 	public int height(){
@@ -74,8 +75,9 @@ public class AVLTree<T extends Comparable<T>> {
 		}
 		//递归查找二叉树X的键值为key的节点
 		private AVLTreeNode<T> search(AVLTreeNode<T> x,T key){
-			if(x==null)
-				return x;
+			if(x==null) {
+                return x;
+            }
 			int cmp = key.compareTo(x.key);
 			if(cmp<0){
 				return search(x.left,key);
@@ -93,12 +95,13 @@ public class AVLTree<T extends Comparable<T>> {
 		private AVLTreeNode<T> iterativeSearch(AVLTreeNode<T> x,T key){
 			while(x!=null){
 				int cmp = key.compareTo(x.key);
-				if(cmp<0)
-					x=x.left;
-				else if(cmp>0)
-					x=x.right;
-				else 
-					return x;
+				if(cmp<0) {
+                    x=x.left;
+                } else if(cmp>0) {
+                    x=x.right;
+                } else {
+                    return x;
+                }
 			}
 			return x;
 		}
@@ -107,8 +110,9 @@ public class AVLTree<T extends Comparable<T>> {
 		}
 		//查找最大节点
 		private AVLTreeNode<T> maximun(AVLTreeNode<T> tree){
-			if(tree==null)
-				return null;
+			if(tree==null) {
+                return null;
+            }
 			while(tree.right!=null){
 				tree=tree.right;
 			}
@@ -124,8 +128,9 @@ public class AVLTree<T extends Comparable<T>> {
 
 		// 查找最小节点
 		private AVLTreeNode<T> minimun(AVLTreeNode<T> tree) {
-			if (tree == null)
-				return null;
+			if (tree == null) {
+                return null;
+            }
 			while (tree.left != null) {
 				tree = tree.left;
 			}
@@ -217,10 +222,11 @@ public class AVLTree<T extends Comparable<T>> {
 			}else if(cmp>0){ //应该讲key插入到tree的右子树的情况
 				tree.right=insert(tree.right,key);
 				if(height(tree.right)-height(tree.left)==2){
-					if(key.compareTo(tree.right.key)>0)
-						tree = rightRightRotation(tree);
-					else
-						tree = rightLeftRotation(tree);
+					if(key.compareTo(tree.right.key)>0) {
+                        tree = rightRightRotation(tree);
+                    } else {
+                        tree = rightLeftRotation(tree);
+                    }
 				}
 			}else{ //cmp==0
 				System.out.println("添加失败,不允许添加相同的节点！");
@@ -243,18 +249,20 @@ public class AVLTree<T extends Comparable<T>> {
 	 */
 	private AVLTreeNode<T> remove(AVLTreeNode<T> tree, AVLTreeNode<T> z) {
 		// 根为空或者没有要删除的节点，直接返回null
-		if (tree == null || z == null)
-			return null;
+		if (tree == null || z == null) {
+            return null;
+        }
 		int cmp = z.key.compareTo(tree.key);
 		if (cmp < 0) {// 待删除的节点在左子树中
 			tree.left = remove(tree.left, z);
 			// 删除节点后，若AVL树失去平衡，则进行相应的调节
 			if (height(tree.right) - height(tree.left) == 2) {
 				AVLTreeNode<T> r = tree.right;
-				if (height(r.left) > height(r.right))
-					tree = rightLeftRotation(tree);
-				else
-					tree = rightRightRotation(tree);
+				if (height(r.left) > height(r.right)) {
+                    tree = rightLeftRotation(tree);
+                } else {
+                    tree = rightRightRotation(tree);
+                }
 			}
 		} else if (cmp > 0) {// 待删除的节点在右子树中
 			tree.right = remove(tree.right, z);
@@ -298,8 +306,9 @@ public class AVLTree<T extends Comparable<T>> {
 	}
 	public void remove(T key){
 		AVLTreeNode<T> z;
-		if((z=search(mRoot, key))!=null)
-			mRoot = remove(mRoot,z);
+		if((z=search(mRoot, key))!=null) {
+            mRoot = remove(mRoot,z);
+        }
 	}
 	/*
 	 * 打印"二叉查找树"
@@ -329,11 +338,15 @@ public class AVLTree<T extends Comparable<T>> {
 	 * 销毁二叉树
 	 */
 	private void destory(AVLTreeNode<T> tree){
-		if(tree==null) return ;
-		if(tree.left!=null)
-			destory(tree.left);
-		if(tree.right!=null)
-			destory(tree.right);
+		if(tree==null) {
+            return ;
+        }
+		if(tree.left!=null) {
+            destory(tree.left);
+        }
+		if(tree.right!=null) {
+            destory(tree.right);
+        }
 		tree=null;
 	}
 	public void clear(){

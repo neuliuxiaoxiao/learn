@@ -97,7 +97,7 @@ class Box1 implements Serializable {
     //static  和transient的不会被序列化
     public Box1(String name, int width, int height) {
         this.name = name;
-        this.width = width;
+        Box1.width = width;
         this.height = height;
     }
     private transient Thread thread = new Thread() {

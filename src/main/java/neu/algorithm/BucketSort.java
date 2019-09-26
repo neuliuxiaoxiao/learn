@@ -65,7 +65,8 @@ public class BucketSort {
 	 public static void main(String[] args) throws Exception {
 		 int a[] = {8,2,3,4,3,6,6,3,9};
 		 int[] b = new BucketSort().sort(a);
-		 for (int i=0; i<b.length; i++)
-			              System.out.printf("%d ", b[i]);
+		 for (int i=0; i<b.length; i++) {
+             System.out.printf("%d ", b[i]);
+         }
 	}
 }

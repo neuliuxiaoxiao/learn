@@ -10,35 +10,36 @@ import org.springframework.core.Ordered;
 public class AspectTwo implements Ordered {
 
     /**
-     * Pointcut¶¨ÒåÇÐµãº¯Êý
+     * Pointcutï¿½ï¿½ï¿½ï¿½ï¿½Ðµãº¯ï¿½ï¿½
      */
     @Pointcut("execution(* neu.aop.UserDao.deleteUser(..))")
     private void myPointcut(){}
 
     @Before("myPointcut()")
     public void beforeOne(){
-        System.out.println("Ç°ÖÃÍ¨Öª....Ö´ÐÐË³Ðò1--AspectTwo");
+        System.out.println("Ç°ï¿½ï¿½Í¨Öª....Ö´ï¿½ï¿½Ë³ï¿½ï¿½1--AspectTwo");
     }
 
     @Before("myPointcut()")
     public void beforeTwo(){
-        System.out.println("Ç°ÖÃÍ¨Öª....Ö´ÐÐË³Ðò2--AspectTwo");
+        System.out.println("Ç°ï¿½ï¿½Í¨Öª....Ö´ï¿½ï¿½Ë³ï¿½ï¿½2--AspectTwo");
     }
 
     @AfterReturning(value = "myPointcut()")
     public void AfterReturningThree(){
-        System.out.println("ºóÖÃÍ¨Öª....Ö´ÐÐË³Ðò3--AspectTwo");
+        System.out.println("ï¿½ï¿½ï¿½ï¿½Í¨Öª....Ö´ï¿½ï¿½Ë³ï¿½ï¿½3--AspectTwo");
     }
 
     @AfterReturning(value = "myPointcut()")
     public void AfterReturningFour(){
-        System.out.println("ºóÖÃÍ¨Öª....Ö´ÐÐË³Ðò4--AspectTwo");
+        System.out.println("ï¿½ï¿½ï¿½ï¿½Í¨Öª....Ö´ï¿½ï¿½Ë³ï¿½ï¿½4--AspectTwo");
     }
 
     /**
-     * ¶¨ÒåÓÅÏÈ¼¶,ÖµÔ½µÍ,ÓÅÏÈ¼¶Ô½¸ß
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½,ÖµÔ½ï¿½ï¿½,ï¿½ï¿½ï¿½È¼ï¿½Ô½ï¿½ï¿½
      * @return
      */
+    @Override
     public int getOrder() {
         return 2;
     }

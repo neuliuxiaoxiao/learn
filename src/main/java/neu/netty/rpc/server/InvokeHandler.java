@@ -33,7 +33,8 @@ public class InvokeHandler extends ChannelInboundHandlerAdapter {
 		}
 	}
 
-	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+	@Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		ClassInfo classInfo = (ClassInfo) msg;
 		Object clazz = Class.forName(getImplClassName(classInfo)).newInstance();
 		Method method = clazz.getClass().getMethod(classInfo.getMethodName(), classInfo.getTypes());

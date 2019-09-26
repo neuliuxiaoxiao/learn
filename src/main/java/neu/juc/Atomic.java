@@ -9,20 +9,24 @@ public class Atomic {
 	private static Integer[] arrayTwo = new Integer[]{10,1,2,3,0,5,6,0,56,0};
 	public static void main(String[] args) throws InterruptedException {
 		Thread threadOne = new Thread(new Runnable() {
+			@Override
 			public void run() {
 				int size = arrayOne.length;
 				for (int i = 0; i < size; ++i) {
-					if(arrayOne[i].intValue()==0)
+					if(arrayOne[i].intValue()==0) {
 						atomicLong.incrementAndGet();
+					}
 				}
 			}
 		});
 		Thread threadTwo = new Thread(new Runnable() {
+			@Override
 			public void run() {
 				int size = arrayTwo.length;
 				for (int i = 0; i < size; ++i) {
-					if(arrayTwo[i].intValue()==0)
+					if(arrayTwo[i].intValue()==0) {
 						atomicLong.incrementAndGet();
+					}
 				}
 			}
 		});

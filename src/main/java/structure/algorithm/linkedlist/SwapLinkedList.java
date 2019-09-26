@@ -5,7 +5,9 @@ import jdk.nashorn.internal.ir.LiteralNode;
 //两两反转
 public class SwapLinkedList {
     public ListNode swapPairs(ListNode head) {
-        if (head == null || head.next == null) return head;
+        if (head == null || head.next == null) {
+            return head;
+        }
         ListNode next = head.next;//保留head节点的下一个节点 反转head 和next
         head.next = swapPairs(next.next);//反转后 head节点的next指向 递归的结果  next.next 指向前一个节点即head
         next.next = head;

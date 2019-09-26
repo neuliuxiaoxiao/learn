@@ -51,8 +51,9 @@ public class BSTree<T extends Comparable<T>> {
 	}
 	//递归查找二叉树X的键值为key的节点
 	private BSTNode<T> search(BSTNode<T> x,T key){
-		if(x==null)
-			return x;
+		if(x==null) {
+            return x;
+        }
 		int cmp = key.compareTo(x.key);
 		if(cmp<0){
 			return search(x.left,key);
@@ -70,12 +71,13 @@ public class BSTree<T extends Comparable<T>> {
 	private BSTNode<T> iterativeSearch(BSTNode<T> x,T key){
 		while(x!=null){
 			int cmp = key.compareTo(x.key);
-			if(cmp<0)
-				x=x.left;
-			else if(cmp>0)
-				x=x.right;
-			else 
-				return x;
+			if(cmp<0) {
+                x=x.left;
+            } else if(cmp>0) {
+                x=x.right;
+            } else {
+                return x;
+            }
 		}
 		return x;
 	}
@@ -84,8 +86,9 @@ public class BSTree<T extends Comparable<T>> {
 	}
 	//查找最大节点
 	private BSTNode<T> maximun(BSTNode<T> tree){
-		if(tree==null)
-			return null;
+		if(tree==null) {
+            return null;
+        }
 		while(tree.right!=null){
 			tree=tree.right;
 		}
@@ -101,8 +104,9 @@ public class BSTree<T extends Comparable<T>> {
 
 	// 查找最小节点
 	private BSTNode<T> minimun(BSTNode<T> tree) {
-		if (tree == null)
-			return null;
+		if (tree == null) {
+            return null;
+        }
 		while (tree.left != null) {
 			tree = tree.left;
 		}
@@ -119,8 +123,9 @@ public class BSTree<T extends Comparable<T>> {
 	//前驱节点
 	public BSTNode<T> predecessor(BSTNode<T> x){
 		// 如果x存在左孩子，则"x的前驱结点"为 "以其左孩子为根的子树的最大结点"。
-		if(x.left!=null)
-			return maximun(x.left);
+		if(x.left!=null) {
+            return maximun(x.left);
+        }
 		// 如果x没有左孩子。则x有以下两种可能：
 	    // (01) x是"一个右孩子"，则"x的前驱结点"为 "它的父结点"。
 	    // (01) x是"一个左孩子"，则查找"x的最低的父结点，并且该父结点要具有右孩子"，找到的这个"最低的父结点"就是"x的前驱结点"。
@@ -135,8 +140,9 @@ public class BSTree<T extends Comparable<T>> {
 	//后继节点
 	public BSTNode<T> successor(BSTNode<T> x) {
 	    // 如果x存在右孩子，则"x的后继结点"为 "以其右孩子为根的子树的最小结点"。
-	    if (x.right != null)
-	        return minimun(x.right);
+	    if (x.right != null) {
+            return minimun(x.right);
+        }
 
 	    // 如果x没有右孩子。则x有以下两种可能：
 	    // (01) x是"一个左孩子"，则"x的后继结点"为 "它的父结点"。
@@ -185,8 +191,9 @@ public class BSTree<T extends Comparable<T>> {
 	}
 	public void insert(T key){
 		BSTNode<T> z=new BSTNode<T>(key,null,null,null);
-		if(z!=null)
-			insert(this,z);
+		if(z!=null) {
+            insert(this,z);
+        }
 	}
 	/* 
 	 * 删除结点(z)，并返回被删除的结点
@@ -276,11 +283,15 @@ public class BSTree<T extends Comparable<T>> {
 	 * 销毁二叉树
 	 */
 	private void destory(BSTNode<T> tree){
-		if(tree==null) return ;
-		if(tree.left!=null)
-			destory(tree.left);
-		if(tree.right!=null)
-			destory(tree.right);
+		if(tree==null) {
+            return ;
+        }
+		if(tree.left!=null) {
+            destory(tree.left);
+        }
+		if(tree.right!=null) {
+            destory(tree.right);
+        }
 		tree=null;
 	}
 	public void clear(){

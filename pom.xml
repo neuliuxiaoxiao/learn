@@ -21,9 +21,16 @@
 
     <properties>
 		<slf4jVersion>1.6.1</slf4jVersion>
-		<spring.version>4.2.0.RELEASE</spring.version>
+		<spring.version>5.1.6.RELEASE</spring.version>
 	</properties>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.10.2</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -35,7 +42,11 @@
 			<artifactId>spring-beans</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<version>9.0.6</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -114,6 +125,11 @@
 		    <artifactId>kafka_2.12</artifactId>
 		    <version>2.2.0</version>
 		</dependency>
-		
-	</dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+
+    </dependencies>
 </project>

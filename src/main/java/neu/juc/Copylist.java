@@ -14,7 +14,8 @@ public class Copylist {
 		arrayList.add("to");
 		arrayList.add("shenzhen");
 		Thread threadOne = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				arrayList.set(1,"baba");
 				arrayList.remove(2);
 				arrayList.remove(3);

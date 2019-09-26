@@ -17,8 +17,9 @@ public class RBTreeTest {
         RBTree<Integer> tree=new RBTree<Integer>();
 
         System.out.printf("== 原始数据: ");
-        for(i=0; i<ilen; i++)
+        for(i=0; i<ilen; i++) {
             System.out.printf("%d ", a[i]);
+        }
         System.out.printf("\n");
 
         for(i=0; i<ilen; i++) {

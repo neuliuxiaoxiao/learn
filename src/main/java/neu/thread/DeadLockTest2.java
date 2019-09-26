@@ -6,7 +6,8 @@ public class DeadLockTest2 {
 	private static Object resourceB = new Object();
 	public static void main(String[] args) {
 		Thread threadA = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				synchronized (resourceA) {
 					System.out.println(Thread.currentThread()+" get resourceA");
 					try {
@@ -22,7 +23,8 @@ public class DeadLockTest2 {
 			}
 		});
 		Thread threadB = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				synchronized (resourceA) {
 					System.out.println(Thread.currentThread()+" get resourceB");
 					try {

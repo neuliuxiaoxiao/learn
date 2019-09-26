@@ -34,12 +34,15 @@ public class PipeReceiver extends Thread {
 			byte[] buf = new byte[1024];
 			try {
 				int len = in.read(buf);
-				if (len ==-1)//¶ÁÍêÒ»´Îºó ×èÈû**********************************
-					break;
+				if (len ==-1)//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Îºï¿½ ï¿½ï¿½ï¿½ï¿½**********************************
+                {
+                    break;
+                }
 				total += len;
 				System.out.println(new String(buf, 0, len));
-				if (total > 1024)
-					break;
+				if (total > 1024) {
+                    break;
+                }
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

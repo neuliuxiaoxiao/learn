@@ -19,8 +19,9 @@ public class InsertSort {
 				j--;
 			}
 			 // 存在比其小的数，插入
-			if(j!=i)
-				sourceArray[j]=tmp;
+			if(j!=i) {
+                sourceArray[j]=tmp;
+            }
 		}
 	}
 }

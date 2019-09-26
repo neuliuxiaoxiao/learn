@@ -10,7 +10,8 @@ public class MulLockTest {
 
 	public static void main(String[] args) throws InterruptedException {
 		Thread threadA = new Thread(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				try {
 					synchronized (resourceA) {
 						System.out.println("threadA get resourceA lock");
@@ -26,7 +27,8 @@ public class MulLockTest {
 			}
 		});
 		Thread threadB = new  Thread(new Runnable(){
-			public void run() {
+			@Override
+            public void run() {
 				try {
 					Thread.sleep(1000);
 					synchronized (resourceA) {

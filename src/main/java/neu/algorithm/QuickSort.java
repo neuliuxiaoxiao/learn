@@ -21,14 +21,16 @@ public class QuickSort {
 		if(left<right){
 			int i=left,j=right,x=sourceArray[i];
 			while(left<right){//
-				while(i<j&&sourceArray[j]>x)
-					j--;//从右往左找第一个小于x的数
+				while(i<j&&sourceArray[j]>x) {
+                    j--;//从右往左找第一个小于x的数
+                }
 				if(i<j){
 					sourceArray[i]=sourceArray[j];//如果找到了就交换  然后i往后挪一位
 					i++;
 				}
-				while(i<j&&sourceArray[i]<x)
-					i++;//从左往右找第一个大于x的数
+				while(i<j&&sourceArray[i]<x) {
+                    i++;//从左往右找第一个大于x的数
+                }
 				if(i<j){
 					sourceArray[j]=sourceArray[i];
 					j--;

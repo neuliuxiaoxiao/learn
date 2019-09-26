@@ -20,9 +20,11 @@ public class RadixSort {
         int max;
 
         max = a[0];
-        for (int i = 1; i < a.length; i++)
-            if (a[i] > max)
+        for (int i = 1; i < a.length; i++) {
+            if (a[i] > max) {
                 max = a[i];
+            }
+        }
 
         return max;
     }
@@ -46,12 +48,14 @@ public class RadixSort {
         int[] buckets = new int[10];
 
         // 将数据出现的次数存储在buckets[]中
-        for (int i = 0; i < a.length; i++)
+        for (int i = 0; i < a.length; i++) {
             buckets[ (a[i]/exp)%10 ]++;
+        }
 
         // 更改buckets[i]。目的是让更改后的buckets[i]的值，是该数据在output[]中的位置。
-        for (int i = 1; i < 10; i++)
+        for (int i = 1; i < 10; i++) {
             buckets[i] += buckets[i - 1];
+        }
 
         // 将数据存储到临时数组output[]中
         for (int i = a.length - 1; i >= 0; i--) {
@@ -60,8 +64,9 @@ public class RadixSort {
         }
 
         // 将排序好的数据赋值给a[]
-        for (int i = 0; i < a.length; i++)
+        for (int i = 0; i < a.length; i++) {
             a[i] = output[i];
+        }
 
         output = null;
         buckets = null;
@@ -78,8 +83,9 @@ public class RadixSort {
         int max = getMax(a);    // 数组a中的最大值
 
         // 从个位开始，对数组a按"指数"进行排序
-        for (exp = 1; max/exp > 0; exp *= 10)
+        for (exp = 1; max/exp > 0; exp *= 10) {
             countSort(a, exp);
+        }
     }
 
     public static void main(String[] args) {
@@ -87,15 +93,17 @@ public class RadixSort {
         int a[] = {53, 3, 542, 748, 14, 214, 154, 63, 616};
 
         System.out.printf("before sort:");
-        for (i=0; i<a.length; i++)
+        for (i=0; i<a.length; i++) {
             System.out.printf("%d ", a[i]);
+        }
         System.out.printf("\n");
 
         radixSort(a);    // 基数排序
 
         System.out.printf("after  sort:");
-        for (i=0; i<a.length; i++)
+        for (i=0; i<a.length; i++) {
             System.out.printf("%d ", a[i]);
+        }
         System.out.printf("\n");
     }
 }

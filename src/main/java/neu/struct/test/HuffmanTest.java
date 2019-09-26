@@ -11,8 +11,9 @@ public class HuffmanTest {
 		Huffman tree;
 
 		System.out.print("== 添加数组: ");
-		for(i=0; i<a.length; i++) 
-			System.out.print(a[i]+" ");
+		for(i=0; i<a.length; i++) {
+            System.out.print(a[i]+" ");
+        }
 	
 		// 创建数组a对应的Huffman树
 		tree = new Huffman(a);

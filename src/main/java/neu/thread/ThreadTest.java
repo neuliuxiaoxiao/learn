@@ -7,19 +7,22 @@ public class ThreadTest {
 
 	//鏂瑰紡1 Thread
 	public static class MyThread extends Thread{
-		public void run() {
+		@Override
+        public void run() {
 			System.out.println("I'm a child thread"+this.getName());
 		}
 	}
 	//鏂瑰紡2 Runnable
 	public static class RunnableTask implements Runnable{
-		public void run() {
+		@Override
+        public void run() {
 			System.out.println("I'm a child thread"+Thread.currentThread().getName());
 		}
 	}
 	//鏂瑰紡3 FutureTask
 	public static class CallerTask implements Callable<String>{
-		public String call() throws Exception {
+		@Override
+        public String call() throws Exception {
 			return "hello";
 		}
 	}
